@@ -1,0 +1,81 @@
+.post-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Mobile: 1 column */
+  @media (max-width: 599px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Tablet: 2 columns */
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .post-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Desktop: 5 columns */
+  @media (min-width: 1024px) {
+    .post-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  .post-details {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 2px solid #eee;
+  }
+  
+  /* Side-by-side layout for desktop */
+  @media (min-width: 1024px) {
+    .post-details {
+      display: flex;
+      gap: 2rem;
+    }
+  
+    app-post-detail {
+      flex: 1;
+    }
+  }
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+  }
+  

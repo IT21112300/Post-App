@@ -1,1 +1,24 @@
-<p>post-list works!</p>
+<!-- Grid of Posts -->
+<div class="post-grid">
+    <app-post-card
+      *ngFor="let post of posts"
+      [post]="post"
+      (click)="selectPost(post)">
+    </app-post-card>
+  </div>
+  
+  <!-- Load More Button -->
+  <div style="text-align: center; margin-top: 1rem;">
+    <button (click)="loadPosts()" [disabled]="!hasMore">
+      {{ hasMore ? 'Load More' : 'No More Posts' }}
+    </button>
+  </div>
+  
+  <!-- Modal for Post Details -->
+  <div class="modal-backdrop" *ngIf="selectedPost" (click)="closeModal()"></div>
+  
+  <div class="modal" *ngIf="selectedPost">
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    <app-post-detail [post]="selectedPost"></app-post-detail>
+  </div>
+  

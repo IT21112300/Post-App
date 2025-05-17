@@ -1,0 +1,22 @@
+h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #222;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  h3 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  div > div {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
